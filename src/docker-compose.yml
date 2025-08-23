@@ -1,8 +1,6 @@
-version: "3.9"
-
 services:
   gh-mirror:
-    build: .            
+    build: .
     container_name: gh-nas-mirror
     user: root
     restart: unless-stopped
@@ -13,7 +11,9 @@ services:
       INCLUDE_FORKS: "false"
       EXCLUDE_ARCHIVED: "true"
     volumes:
-      - /volume/github-save/github-mirror:/nas        # NAS-PATH
-      - /volume/github-save/github-cache:/data/cache  # Cache
+      - /volume1/github-save/github-mirror:/volume1/github-save/github-mirror
     working_dir: /app
     command: python -u mirror.py
+
+
+

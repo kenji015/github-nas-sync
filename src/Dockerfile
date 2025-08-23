@@ -12,5 +12,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# Container starten
+# Start Container 
 CMD ["python", "-u", "mirror.py"]
