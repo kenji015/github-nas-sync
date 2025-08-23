@@ -1,9 +1,10 @@
-version: "3.8"
+version: "3.9"
+
 services:
   gh-mirror:
-    image: python:3.12-slim
+    build: .            
     container_name: gh-nas-mirror
-    user: "1000:10"   
+    user: root
     restart: unless-stopped
     environment:
       GITHUB_USERNAME: "${GITHUB_USERNAME}"
@@ -12,10 +13,7 @@ services:
       INCLUDE_FORKS: "false"
       EXCLUDE_ARCHIVED: "true"
     volumes:
-      - /volume/github-save/github-mirror:/nas        # Change to your volume path if needed
-      - /volume/github-save/github-cache:/data/cache  # Change to your volume path if needed
-      - /volume/docker/github-nas-mirror:/app:ro      # Change to your volume path if needed
+      - /volume/github-save/github-mirror:/nas        # NAS-PATH
+      - /volume/github-save/github-cache:/data/cache  # Cache
     working_dir: /app
-    command: >
-      sh -c "pip install --no-cache-dir -r requirements.txt &&
-             python -u mirror.py"
+    command: python -u mirror.py
