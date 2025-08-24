@@ -64,7 +64,7 @@ sudo docker compose up -d
 sudo docker logs -f gh-nas-mirror
 ```
 > [!NOTE]  
-> Repository files appear in /```your_volume_name```/github-save/github-mirror/<owner>/<repo>
-> Git cache is in /```your_volume_name```/github-save/github-cache/<owner>/<repo>
+> - Repository files appear in /```your_volume_name```/github-save/github-mirror/<owner>/<repo>
+> - Git cache is in /```your_volume_name```/github-save/github-cache/<owner>/<repo>
 
 ✅ This setup will automatically mirror all your GitHub repos to your NAS, and keep them up-to-date at the defined interval.
