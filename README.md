@@ -38,6 +38,7 @@ Automatically mirrors all GitHub repositories from a user account to a  Network 
 ### 2. Prepare GitHub Access
 
 Create a Personal Access Token (classic) on GitHub → repo scope.
+
 For details:[GitHub](https://docs.github.com/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
 
 Record these credentials:
